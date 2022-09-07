@@ -1,23 +1,23 @@
 package com.example.erdetfredag.Services;
 
-import java.text.DateFormatSymbols;
-import java.util.Calendar;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
 
 public class Calculator {
 
-  Calendar date = Calendar.getInstance();
-  String dayNames[] = new DateFormatSymbols().getWeekdays();
+  LocalDate today= LocalDate.now();
 
   public boolean dayname() {
 
-    if (date.equals(Calendar.FRIDAY)) {
+    if (today.getDayOfWeek().equals(DayOfWeek.FRIDAY) ) {
       System.out.println("Jubii :)");
       return true;
 
     } else {
       System.out.println("Desværre :'(");
       return false;
-    }
-  }
 
+    }
+
+  }
 }
